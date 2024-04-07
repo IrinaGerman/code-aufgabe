@@ -7,12 +7,14 @@
     "build": "npx tsc",
     "start": "node dist/index.js",
     "dev": "concurrently \"npx tsc --watch\" \"nodemon -q dist/index.js\"",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "sequelize": "dotenv sequelize"
   },
   "author": "it-excelsus GmbH",
   "license": "ISC",
   "dependencies": {
     "dotenv": "^16.4.5",
+    "dotenv-cli": "^7.4.1",
     "express": "^4.19.2",
     "mysql2": "^3.9.3",
     "sequelize": "^6.37.2"
@@ -21,7 +23,9 @@
     "@types/express": "^4.17.17",
     "@types/node": "^20.5.6",
     "concurrently": "^8.2.1",
+    "cross-env": "^7.0.3",
     "nodemon": "^3.0.1",
+    "sequelize-cli": "^6.6.2",
     "ts-node": "^10.9.1",
     "typescript": "^5.2.2"
   }

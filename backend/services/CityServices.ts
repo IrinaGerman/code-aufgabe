@@ -1,5 +1,5 @@
 import { Op } from 'sequelize';
-import { City } from '../models/City'
+import { City } from '../db/models/City'
 import { ICity, IParams } from '../interfaces/Interfaces';
 
 export const createCity = async (city: ICity) => {
