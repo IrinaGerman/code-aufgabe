@@ -1,7 +1,7 @@
 import { NaviOptions } from '../types/types';
 import CustomLink from './CustomLink';
 
-const Navbar = ({options}:  NaviOptions[]) => {
+const Navbar = ({options}:  {options : NaviOptions[]}) => {
     
   return (
     <>

@@ -6,7 +6,7 @@ module.exports = {
     await queryInterface.addIndex('Cities', ['cityName', 'count']);
     await queryInterface.addColumn('Cities', 'pictureLink', {
       type: Sequelize.STRING,
-      allowNull: false,
+      allowNull: true,
     });
   },
 

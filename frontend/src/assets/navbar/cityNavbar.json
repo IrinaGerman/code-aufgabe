@@ -1,0 +1,5 @@
+[
+  { "name": "About", "href": "", "current": true },
+  { "name": "History", "href": "", "current": false },
+  { "name": "Culture", "href": "", "current": false }
+]

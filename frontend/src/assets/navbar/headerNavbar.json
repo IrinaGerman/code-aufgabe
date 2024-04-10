@@ -1,0 +1,6 @@
+[
+  { "name": "Home", "href": "/", "current": true },
+  { "name": "Create", "href": "/create", "current": false },
+  { "name": "Update", "href": "/update", "current": false },
+  { "name": "Delete", "href": "/delete", "current": false }
+]

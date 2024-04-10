@@ -1,21 +1,16 @@
 import Navbar from '../navigation/Navbar';
-import { NaviOptions } from '../types/types';
 import Distortion from './Distortion';
+import cityNavbar from '../assets/navbar/cityNavbar.json';
 
 type Props = {
-  image: string;
   name: string;
   description: string;
   position: number;
 };
 
-const options: NaviOptions[] = [
-  { name: 'About', href: '', current: true },
-  { name: 'History', href: '', current: false },
-  { name: 'Culture', href: '', current: false },  
-];
+const CityComponent = ({ name, description, position }: Props) => {
+  const image = `/img/${name}.webp`;
 
-const CityComponent = ({ image, name, description, position }: Props) => {
   return (
     <div className='w-full md:h-[28rem] h-[24rem] lg:h-[30rem] pb-10'>
       <div className='relative w-full h-full flex flex-row overflow-hidden shadow-3xl rounded-lg'>
@@ -34,8 +29,10 @@ const CityComponent = ({ image, name, description, position }: Props) => {
           } h-full basis-1/2 bg-gray-blue`}
         >
           <div className='relative flex h-full flex-col justify-center items-center'>
-            <div className='absolute top-2'><Navbar options={options}></Navbar></div>
-            
+            <div className='absolute top-2'>
+              <Navbar options={cityNavbar}></Navbar>
+            </div>
+
             <div className='leading-tight text-black font-semibold text-[3.5rem]'>
               {name}
             </div>

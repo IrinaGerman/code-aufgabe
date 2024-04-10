@@ -2,13 +2,15 @@ import { Dialect } from "sequelize"
 export interface ICity {
   uuid: string
   cityName: string
-  count: number
+  count: number 
+  pictureLink? : string
 }
 
 export interface IParams {
   uuid?: string
-  cityName?: string
-  count?: number
+  name?: string
+  count?: string
+  page?: string
 }
 
 export interface IConfig {

@@ -1,6 +1,6 @@
 import { useEffect, useRef } from 'react';
-import ImgBase from '../assets/img/Brezel.jpg';
-import Dist from '../assets/img/overlay.png';
+import ImgBase from '/img/Brezel.webp';
+import Dist from '/img/overlay.png';
 // eslint-disable-next-line @typescript-eslint/ban-ts-comment
 // @ts-ignore
 import hoverEffect from 'hover-effect';

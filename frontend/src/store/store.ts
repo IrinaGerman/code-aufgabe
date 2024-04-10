@@ -1,18 +1,16 @@
 import { createStore } from 'zustand';
-// import { ICity } from '../types/types';
 
 const useStore = createStore((set) => ({
   cities: [],
-  // getCities: () => set((state: { cities: ICity[] }) => ({ cities: state.cities })),  
-  getCities: async () => {
+  setAllCities: async () => {
     try {
-      const response = await fetch('https://xxx');
+      const response = await fetch('http://localhost:7070/');
       const data = await response.json();
       set({ cities: data });
     } catch (error) {
       console.error('Error fetching users:', error);
     }
-  }
+  },
 }));
 
 export default useStore

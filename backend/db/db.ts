@@ -6,7 +6,7 @@ import { IConfig } from '../interfaces/Interfaces.js';
 dotenv.config();
 
 const env = process.env.NODE_ENV
-export const dbConfig: IConfig = config[env as keyof typeof config]
+export const dbConfig: IConfig = config[env]
 
 const sequelize = new Sequelize(dbConfig.database, dbConfig.username, dbConfig.password, {
   host: dbConfig.host,
