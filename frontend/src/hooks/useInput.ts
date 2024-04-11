@@ -8,9 +8,12 @@ function useInput(initialValue: string) {
   };
 
   return {
+    bind: {
+      value,
+      onChange: handleChange
+    },
     value,
-    onChange: handleChange,
-    reset: () => setValue(initialValue)
+    reset: () => setValue('')
   };
 }
 

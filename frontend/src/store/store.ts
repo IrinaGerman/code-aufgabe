@@ -1,16 +1,18 @@
-import { createStore } from 'zustand';
+import { create } from 'zustand';
+import { ICity } from '../types/types';
 
-const useStore = createStore((set) => ({
+interface State {
+  cities: ICity[] | [],
+  inputValue: string,
+}
+type Action = {
+  setInputValue: (value: string) => void;
+}
+
+const useStore = create<State & Action>((set) => ({
   cities: [],
-  setAllCities: async () => {
-    try {
-      const response = await fetch('http://localhost:7070/');
-      const data = await response.json();
-      set({ cities: data });
-    } catch (error) {
-      console.error('Error fetching users:', error);
-    }
-  },
+  inputValue: '',
+  setInputValue: (value: string) => set({ inputValue: value }),  
 }));
 
 export default useStore

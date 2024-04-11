@@ -9,6 +9,7 @@ export interface ICity {
 export interface IParams {
   uuid?: string
   name?: string
+  str?: string
   count?: string
   page?: string
 }

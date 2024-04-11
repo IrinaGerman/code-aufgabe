@@ -1,8 +1,14 @@
+import CUDComponent from "../components/CUDComponent";
 
-const Create = () => {
-  return (
-    <div className='h-screen'>Create</div>
-  )
+const pageOptions = {
+  page: 'create',
+  title:  'Create new city',
 }
 
-export default Create
+const Create = () => {
+ return (
+  <CUDComponent pageOptions={pageOptions}></CUDComponent>
+ )
+};
+
+export default Create;

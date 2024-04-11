@@ -1,0 +1,12 @@
+[
+  {
+    "name": "City name",
+    "shortName": "cityName",
+    "type": "text"
+  },
+  {
+    "name": "Count",
+    "shortName": "count",
+    "type": "text"
+  }
+]

@@ -1,8 +1,12 @@
+import CUDComponent from '../components/CUDComponent';
+
+const pageOptions = {
+  page: 'update',
+  title: 'Update city',
+};
 
 const Update = () => {
-  return (
-    <div className='h-screen'>Update</div>
-  )
-}
+  return <CUDComponent pageOptions={pageOptions}></CUDComponent>;
+};
 
-export default Update
+export default Update;

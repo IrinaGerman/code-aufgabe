@@ -9,3 +9,13 @@ export interface NaviOptions {
   href: string
   current: boolean
 }
+
+export interface IFormData {
+  cityName: string
+  count?: string
+}
+
+export type PageOptions = { 
+    page: string;
+    title: string;    
+}

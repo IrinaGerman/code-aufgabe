@@ -11,11 +11,11 @@ export const createAllCities = async () => {
 }
 
 export const createCity = async (city: ICity) => {
-  return await City.create({ ...city });
+  return await City.create({ ...city, count: Number(city.count) });
 }
 
-export const findCity = async (params: IParams) => {
-  return await City.findOne({ where: { cityName: params.name } });
+export const findCity = async (cityName: string) => {
+  return await City.findOne({ where: { cityName: cityName } });
 }
 
 export const updateCityDB = async (city: ICity, params: IParams) => {
@@ -26,6 +26,15 @@ export const deleteCityDB = async (params: IParams) => {
   return await City.destroy({ where: { cityName: params.name } })
 }
 
+export const getPagesFromDB = async () => {
+  const cities = await City.findAll({
+    attributes: { exclude: ['createdAt', 'updatedAt'] },   
+  })
+  const cityData = cities.map(city => city.dataValues);
+  const pages = cityData.length/5 + (cityData.length%5 ? 1 : 0)
+  return pages
+}
+
 export const getAllCitiesFromDB = async (params: IParams) => {
   const cities = await City.findAll({
     attributes: { exclude: ['createdAt', 'updatedAt'] },
@@ -33,19 +42,19 @@ export const getAllCitiesFromDB = async (params: IParams) => {
     offset: Number(params.page) * 5
   })
   const cityData = cities.map(city => city.dataValues);
-  
   return cityData
 }
 
 export const chooseCitiesFromDB = async (params: IParams) => {
-  return await City.findAll({
+  const cities = await City.findAll({
     where: {
       cityName: {
-        [Op.like]: `${params.name}%`
+        [Op.startsWith]: `${params.str}%`
       }
     },
     attributes: { exclude: ['createdAt', 'updatedAt'] },
-    limit: 5,
-    offset: Number(params.page) * 5
+    // limit: 5,
+    // offset: Number(params.page) * 5
   })
+  return cities
 }
